@@ -1,4 +1,4 @@
-from crewai import Agent
+from crewai import Agent, LLM
 from tools import youtube_search_tool, youtube_transcript_tool 
 # from langchain_groq import ChatGroq
 import os
@@ -7,6 +7,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.7)
+llm = LLM(
+    model="gemini/gemini-flash-latest",  # Free, excellent tool calling
+    api_key=os.getenv("GEMINI_API_KEY"),
+    temperature=0.3
+)
 
 
 researcher = Agent(
@@ -20,9 +25,11 @@ researcher = Agent(
     channels, identifying the correct videos, and extracting meaningful information 
     from transcripts including key topics, insights, and important quotes.""",
     tools=[youtube_search_tool, youtube_transcript_tool],
-    llm="groq/llama-3.3-70b-versatile",
+    llm=llm,
+    max_rpm=15,
+    max_iter=3,
     verbose = True,
-    allow_delegation = True,
+    allow_delegation = False,
 )
 
 
@@ -36,8 +43,10 @@ blogger = Agent(
     transforming video transcripts into compelling written articles. You know how to 
     structure blog posts with catchy introductions, clear headings, key takeaways, 
     and strong conclusions that keep readers engaged and coming back for more.""",
-    llm = "groq/llama-3.3-70b-versatile",
+    llm = llm,
     tools = [],
+    max_iter=2,   # ← Blogger only needs 1-2 iterations
+    max_rpm=15,
     verbose = True,
     allow_delegation = False
 )
