@@ -1,12 +1,14 @@
 ---
 title: Crew Ai
-emoji: 🤖
+emoji: 🚀
 colorFrom: yellow
 colorTo: purple
 sdk: gradio
 sdk_version: 5.25.0
 app_file: app.py
 pinned: false
+license: apache-2.0
+short_description: Multi Agent application with Crew AI
 ---
 
 # 🤖 CrewAI YouTube Blog Generator
