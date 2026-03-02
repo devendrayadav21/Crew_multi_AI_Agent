@@ -1,4 +1,14 @@
-<<<<<<< HEAD
+---
+title: Crew Ai
+emoji: 🤖
+colorFrom: yellow
+colorTo: purple
+sdk: gradio
+sdk_version: 5.25.0
+app_file: app.py
+pinned: false
+---
+
 # 🤖 CrewAI YouTube Blog Generator
 
 > An AI-powered multi-agent system that automatically finds a YouTube video, fetches its transcript, and generates a professional SEO-optimized blog post — **completely free, no OpenAI key required!**
@@ -23,6 +33,7 @@ CrewAI_multi_agents/
 ├── agents.py        # Defines Researcher and Blogger agents with Gemini LLM
 ├── tasks.py         # Defines Research and Blog Writing tasks
 ├── tools.py         # Custom YouTube search and transcript tools (no OpenAI needed)
+├── app.py           # Gradio UI for HuggingFace Spaces
 ├── .env             # API keys — never push this to GitHub!
 ├── .gitignore       # Ignores .env, cache, and system files
 └── README.md        # You're reading it!
@@ -40,6 +51,7 @@ CrewAI_multi_agents/
 | [LiteLLM](https://github.com/BerriAI/litellm) | LLM provider abstraction | Free |
 | [python-dotenv](https://pypi.org/project/python-dotenv/) | Manage environment variables | Free |
 | [requests](https://pypi.org/project/requests/) | Scrape YouTube search results | Free |
+| [Gradio](https://gradio.app) | Web UI on HuggingFace Spaces | Free |
 
 > ✅ **No OpenAI API key required anywhere in this project!**
 
@@ -64,7 +76,7 @@ conda activate crewAI
 ### 3. Install Dependencies
 
 ```bash
-pip install crewai crewai-tools youtube-transcript-api python-dotenv google-generativeai litellm requests
+pip install crewai crewai-tools youtube-transcript-api python-dotenv google-generativeai litellm requests gradio
 pip install "crewai[google-genai]"
 ```
 
@@ -164,6 +176,7 @@ We built two fully custom tools that replace the broken `YoutubeVideoSearchTool`
 | `Fallback to LiteLLM not available` | LiteLLM not installed | Run `pip install litellm` |
 | `non-fast-forward` git error | Remote has commits local doesn't | Run `git pull origin main --allow-unrelated-histories` |
 | `context=[create_research_task]` error | Passing function instead of task object | Pass the task object: `context=[research_task]` |
+| `CONFLICT in README.md` | HuggingFace auto-generates README metadata | Keep the `---` metadata block at the top of README |
 
 ---
 
@@ -210,19 +223,3 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 <p align="center">Built with ❤️ using CrewAI and Google Gemini</p>
-=======
----
-title: Crew Ai
-emoji: 🏃
-colorFrom: pink
-colorTo: blue
-sdk: gradio
-sdk_version: 6.8.0
-app_file: app.py
-pinned: false
-license: apache-2.0
-short_description: This is space to reply the Crew AI Multi Agent ptoject
----
-
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
->>>>>>> dd58702daf0c5d74f454f644e84b4de02762f657
