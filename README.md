@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🤖 CrewAI YouTube Blog Generator
 
 > An AI-powered multi-agent system that automatically finds a YouTube video, fetches its transcript, and generates a professional SEO-optimized blog post — **completely free, no OpenAI key required!**
@@ -209,3 +210,19 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 <p align="center">Built with ❤️ using CrewAI and Google Gemini</p>
+=======
+---
+title: Crew Ai
+emoji: 🏃
+colorFrom: pink
+colorTo: blue
+sdk: gradio
+sdk_version: 6.8.0
+app_file: app.py
+pinned: false
+license: apache-2.0
+short_description: This is space to reply the Crew AI Multi Agent ptoject
+---
+
+Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+>>>>>>> dd58702daf0c5d74f454f644e84b4de02762f657
